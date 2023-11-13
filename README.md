@@ -4,7 +4,7 @@ A Telegram bot to retrieve the title, doi, authors and publication date of paper
 ## How to activate it
 Bot is already available at the following link https://t.me/BioMedicalPapersBot or can be activated through the following QR code:
 
-![QR_code](./qr_code.jpg)
+![QR_code](./qr_code_bot.jpg)
 
 Just click on "Start" on Telegram chat to make it run
 
