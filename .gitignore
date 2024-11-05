@@ -1,0 +1,5 @@
+# cache
+scripts/__pycache__/
+
+# misc
+articles.xml
