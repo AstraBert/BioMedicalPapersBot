@@ -5,8 +5,8 @@ A Telegram bot to retrieve the title, doi, authors and publication date of paper
 You can pull it from GitHub Docker Container registry:
 
 ```bash
-docker pull ghcr.io/astrabert/biomedicalpapersbot:latest
-docker run -p 7860:7860 ghcr.io/astrabert/biomedicalpapersbot:latest
+docker pull ghcr.io/astrabert/biomedicalpapersbot:main
+docker run -p 7860:7860 ghcr.io/astrabert/biomedicalpapersbot:main
 ```
 
 Or you can clone the repository:
@@ -45,7 +45,8 @@ It is a (bio)python-based Gradio bot that searches PubMed and returns the featur
 You can find a snippet code of the functions used to retrieve and parse data from PubMed in [pubmedScraper.py](./scripts/pubmedScraper.py). The workflow is pretty simple:
 
 - `search_pubmed` does the actual webscraping, thanks to the Entrez NCBI module, that remotely connects to online servers and communicate with them: the function returns a list of PubMed IDs
-- `fetch_pubmed_details`, thanks to a faster access to paper metadata and data with the IDs from the previous function, retrieves significant information about papers and outputs it in standard text format
+- `fetch_pubmed_details`, thanks to a faster access to paper metadata and data with the IDs from the previous function, retrieves significant information about papers and outputs it in standard XML format
+- `fetch_xml` takes care of parsing the XML output and extracting titles, authors, dates of publication and DOIs.
 - `respond_to_query` outputs the information of interest in a format that is human-readable and message-sendable
 
 You can also find the basic architecture of the python code that is used for the Gradio bot itself. 
